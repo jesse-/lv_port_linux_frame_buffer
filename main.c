@@ -29,8 +29,10 @@ int main(void)
     lv_disp_drv_init(&disp_drv);
     disp_drv.draw_buf   = &disp_buf;
     disp_drv.flush_cb   = fbdev_flush;
-    disp_drv.hor_res    = 800;
-    disp_drv.ver_res    = 480;
+    disp_drv.hor_res    = 480;
+    disp_drv.ver_res    = 640;
+    disp_drv.rotated    = LV_DISP_ROT_270;
+    disp_drv.sw_rotate  = 1;
     lv_disp_drv_register(&disp_drv);
 
     evdev_init();
